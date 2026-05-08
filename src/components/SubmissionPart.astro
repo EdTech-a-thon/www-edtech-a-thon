@@ -1,0 +1,14 @@
+---
+interface Props {
+  type: "problem" | "proposed-solution";
+}
+
+const { type } = Astro.props;
+---
+
+<div class="not-first:mt-8">
+  <h3 class="text-lg font-semibold text-slate-900">
+    {type === "problem" ? "Problem Description" : "Proposed Solution"}
+  </h3>
+  <slot />
+</div>

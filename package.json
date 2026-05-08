@@ -15,5 +15,8 @@
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.9",
     "tailwindcss": "^4.2.2"
+  },
+  "dependencies": {
+    "@astrojs/markdoc": "^1.0.4"
   }
 }

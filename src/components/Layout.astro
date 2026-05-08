@@ -1,0 +1,59 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string | string[];
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fffdf8" />
+    <meta
+      name="description"
+      content="Real teachers and developers solving practical classroom problems together at EdTech-a-thon, July 20-22, 2026 in Atlanta, GA."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>
+      {
+        Array.isArray(title) && title.length > 0
+          ? `${title.join(" – ")} – EdTech-a-thon`
+          : typeof title === "string"
+            ? `${title} – EdTech-a-thon`
+            : "EdTech-a-thon"
+      }
+    </title>
+  </head>
+  <body class="text-slate-950">
+    <main
+      class="page-shell mx-auto flex w-full max-w-5xl flex-col gap-12 px-4 py-6 sm:gap-16 sm:px-8 md:gap-20 lg:px-20"
+    >
+      <header
+        class="flex flex-col gap-5 border-b border-slate-200 pb-6 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <a href="/" class="flex items-center gap-3">
+          <img src="/favicon.svg" alt="" class="h-12 w-12" />
+          <span class="font-display text-4xl text-slate-950">EdTech-a-thon</span
+          >
+        </a>
+        <p class="text-sm font-semibold text-slate-600">
+          July 20 - 22, 2026 &bull; Atlanta, GA
+        </p>
+      </header>
+
+      <slot />
+
+      <footer class="py-8 text-center text-sm text-slate-500">
+        Made with ❤️ for teachers, by a team who believes educators will <span
+          class="underline">continue</span
+        > to be the future of learning
+      </footer>
+    </main>
+    <slot name="scripts" />
+  </body>
+</html>

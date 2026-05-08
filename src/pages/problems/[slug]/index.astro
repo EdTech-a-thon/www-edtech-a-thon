@@ -1,0 +1,32 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../../components/Layout.astro";
+import ProblemTag from "../../../components/ProblemTag.astro";
+
+export async function getStaticPaths() {
+  const problems = await getCollection("problems");
+  return problems.map((problem) => ({
+    params: { slug: problem.id },
+    props: { problem },
+  }));
+}
+
+const { problem } = Astro.props;
+const { tags = [] } = problem.data;
+const { Content } = await render(problem);
+---
+
+<Layout title={[problem.data.title, "Problem"]}>
+  <section>
+    <a href="/problems" class="hover:underline">&larr; Problem Board</a>
+    <h1 class="text-4xl font-bold text-slate-900 mt-4">
+      {problem.data.title}
+    </h1>
+    <div class="flex flex-wrap gap-2 mt-3">
+      {tags.map((tag) => <ProblemTag tag={tag} showText />)}
+    </div>
+    <div class="mt-8">
+      <Content />
+    </div>
+  </section>
+</Layout>

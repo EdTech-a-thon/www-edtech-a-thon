@@ -1,0 +1,32 @@
+---
+import Layout from "../../components/Layout.astro";
+import ProblemBoard from "../../components/ProblemBoard.astro";
+import ProblemBoardCard from "../../components/ProblemBoardCard.astro";
+
+import { getCollection } from "astro:content";
+const problems = (await getCollection("problems")).toSorted(
+  (a, b) => Number(a.data.id) - Number(b.data.id),
+);
+---
+
+<Layout>
+  <section>
+    <h1 class="text-4xl font-bold text-slate-900 text-center">Problem Board</h1>
+    <div class="mt-8">
+      <ProblemBoard>
+        {
+          problems.map((problem) => (
+            <ProblemBoardCard
+              slug={problem.id}
+              id={problem.data.id}
+              title={problem.data.title}
+              status={problem.data.status}
+              tags={problem.data.tags}
+              solutions={problem.data.solutions}
+            />
+          ))
+        }
+      </ProblemBoard>
+    </div>
+  </section>
+</Layout>
