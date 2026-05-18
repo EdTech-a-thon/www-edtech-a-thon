@@ -5,6 +5,7 @@ const formLink =
   "https://docs.google.com/forms/d/e/1FAIpQLSe0axLrX6rW9X-Og9-UCs_NVkcq1M66opaFRXuF8yu3M3JRBw/viewform?usp=dialog";
 
 const shareProblemLink = formLink;
+const developerSignupLink = "/dev";
 const interestLink =
   "https://docs.google.com/forms/d/e/1FAIpQLSd8RWjEIUrWAgU-1rRgm-jL_pjlYZa1tNAjSIAppVDRVSWT0w/viewform?usp=publish-editor";
 
@@ -150,20 +151,20 @@ const organizers = [
         >
           <div>
             <h2 class="text-2xl font-extrabold text-slate-950 sm:text-3xl">
-              Are you an educator?
+              Are you a developer?
             </h2>
             <p class="mt-1 text-lg leading-8 text-slate-700">
-              We want to solve your problem.
+              We want your help solving impactful problems.
             </p>
           </div>
           <div class="flex flex-col items-start gap-3 sm:shrink-0">
             <a
-              href={shareProblemLink}
+              href={developerSignupLink}
               target="_blank"
               rel="noreferrer"
               class="w-full rounded-full inline-flex items-center justify-center bg-primary-200 px-5 py-3 text-sm font-bold text-primary-900 transition hover:bg-primary-100 sm:w-auto"
             >
-              Share Your Problem
+              Apply to Build
             </a>
           </div>
         </div>
@@ -171,8 +172,8 @@ const organizers = [
       <p
         class="text-slate-600 text-sm border-t w-full border-dashed border-slate-400 bg-slate-100 rounded-b-md p-2"
       >
-        If you know a busy educator and want to share a problem on their behalf,
-        still fill out the form!
+        If you're unsure whether or not you qualify as a developer, apply
+        anyways! We'll reach out.
       </p>
     </div>
     <div>
@@ -251,6 +252,17 @@ const organizers = [
         Our success is measured collaboratively by the number of problems solved
         for teachers, recognizing that every problem solved is a win for all
         educators.
+      </p>
+      <p class="mt-4 text-base leading-7 text-slate-700">
+        Are you an educator with a problem to share?
+        <a
+          href={shareProblemLink}
+          target="_blank"
+          rel="noreferrer"
+          class="font-bold text-primary-700 transition hover:text-primary-900"
+        >
+          Fill out the form.
+        </a>
       </p>
     </div>
   </section>
