@@ -144,7 +144,40 @@ const organizers = [
   </section>
 
   <section aria-labelledby="problem-board">
-    <div class="border border-slate-400 border-b-4 bg-white rounded-lg">
+  <div class="mt-6 border border-slate-400 border-b-4 bg-white rounded-lg">
+        <div class="p-6">
+          <div
+            class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between"
+          >
+            <div>
+              <h2 class="text-2xl font-extrabold text-slate-950 sm:text-3xl">
+                Are you an educator?
+              </h2>
+              <p class="mt-1 text-lg leading-8 text-slate-700">
+                Share a problem you'd like to see solved.
+              </p>
+            </div>
+            <div class="flex flex-col items-start gap-3 sm:shrink-0">
+              <a
+                href={shareProblemLink}
+                target="_blank"
+                rel="noreferrer"
+                class="w-full rounded-full inline-flex items-center justify-center bg-primary-200 px-5 py-3 text-sm font-bold text-primary-900 transition hover:bg-primary-100 sm:w-auto"
+              >
+                Share a Problem
+              </a>
+            </div>
+          </div>
+        </div>
+        <p
+          class="text-slate-600 text-sm border-t w-full border-dashed border-slate-400 bg-slate-100 rounded-b-md p-2"
+        >
+          Big or small, every classroom problem is worth sharing.
+        </p>
+      </div>
+    </div>
+    
+    <div class="mt-6 border border-slate-400 border-b-4 bg-white rounded-lg">
       <div class="p-6">
         <div
           class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between"
@@ -253,18 +286,8 @@ const organizers = [
         for teachers, recognizing that every problem solved is a win for all
         educators.
       </p>
-      <p class="mt-4 text-base leading-7 text-slate-700">
-        Are you an educator with a problem to share?
-        <a
-          href={shareProblemLink}
-          target="_blank"
-          rel="noreferrer"
-          class="font-bold text-primary-700 transition hover:text-primary-900"
-        >
-          Fill out the form.
-        </a>
-      </p>
-    </div>
+
+      
   </section>
 
   <section
