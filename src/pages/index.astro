@@ -72,6 +72,7 @@ const faqs = [
 
 const organizers = [
   {
+    id: "josh-pullen",
     name: "Josh Pullen",
     headshot: "/Josh.png",
     siteLabel: "joshuapullen.com",
@@ -80,6 +81,7 @@ const organizers = [
       "An Algebra teacher and web developer from South Lyon, Michigan, Josh Pullen builds practical EdTech solutions for his classroom and shares them with other teachers. He has developed interactive math lessons for 3Blue1Brown and is the creator of Shuffle Buddy, a specialized seating chart generator. Josh's work provides simple, effective tools that solve the day-to-day challenges educators actually face.",
   },
   {
+    id: "jessika-golab",
     name: "Jessika Golab",
     headshot: "/Jess.png",
     // siteLabel: 'msgolab.com',
@@ -88,6 +90,7 @@ const organizers = [
       "A middle school math teacher in Walled Lake, MI, Jessika Golab is a passionate supporter and advocate for her students. Jessika’s classroom is adorned with a wall of over 250 rubber and plastic ducks, each one a gift from a student who appreciates her fun and caring presence. Jessika leads her school’s WEB program, where she trains 8th grade leaders to provide mentorship and support to every 6th grade student as they step into middle school life for the first time.",
   },
   {
+    id: "duncan-johnson",
     name: "Duncan Johnson",
     headshot: "/Duncan.png",
     siteLabel: "duncanajohnson.com",
@@ -96,6 +99,7 @@ const organizers = [
       "An EdTech researcher and designer from Boston, Massachusetts, Duncan Johnson builds educational technology for universities and companies alike. He previously co-founded a STEM education non-profit with Elliot Roe and has published computer science education research with the Tufts University Center for Engineering Education and Outreach.",
   },
   {
+    id: "elliot-roe",
     name: "Elliot Roe",
     headshot: "/Elliot.png",
     siteLabel: "elliotbroe.com",
@@ -104,6 +108,7 @@ const organizers = [
       "A full-time software engineer from Atlanta, Georgia, Elliot Roe is passionate about open-source software and educational technology. He previously co-founded a STEM education non-profit with Duncan Johnson and worked as a research assistant at the Play and Learn Lab, where he developed educational games and supported after-school programs. Now, Elliot develops open-source tooling for researchers, integrating academic literature with AI.",
   },
   {
+    id: "sam-barans",
     name: "Sam Barans",
     headshot: "/Sam.png",
     blurb: "Organizer bio coming soon.",
@@ -372,7 +377,7 @@ const organizers = [
     <div class="mt-8 divide-y divide-slate-200 border-y border-slate-200">
       {
         organizers.map((organizer) => (
-          <article class="grid gap-5 py-6 sm:grid-cols-[96px_1fr]">
+          <article id={organizer.id} class="grid gap-5 py-6 sm:grid-cols-[96px_1fr]">
             <img
               src={organizer.headshot}
               alt={`${organizer.name} headshot`}
